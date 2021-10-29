@@ -5,7 +5,8 @@ const cardSchema = new Schema({
     title: String,
     picture: String,
     description: String,
-    sound: String, 
+    sound: String,
+    type: String,
     authorId: String,
 }, { timestamps: true })
 

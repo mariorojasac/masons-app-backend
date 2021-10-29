@@ -2,7 +2,7 @@ const express = require("express");
 const morgan = require("morgan");
 const cors = require("cors");
 const mongoose = require("mongoose");
-const controller = require("./controllers");
+const cardsController = require("./controllers/cards");
 
 const app = express();
 
@@ -22,11 +22,18 @@ app.use(morgan("dev"));
 
 
 // routes
-app.get()
+app.get('/api', (req, res) => {
+    res.json({message: 'Welocme to the Masons App API'})
+})
 
-app.use()
+app.use('/api/cards', cardsController)
 
-app.get()
+app.get('/api/*'), (req, res) => {
+    res.status(404).json({message: 'That route was not found'})
+}
+
+
+
 
 
 app.listen(PORT, () => console.log(`Express is listening on port:${PORT}`));

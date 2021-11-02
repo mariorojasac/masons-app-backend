@@ -5,7 +5,7 @@ const router = express.Router();
 // routes
 
 // User INDEX ROUTE
-router.get("/User", async (req, res) => {
+router.get("/user", async (req, res) => {
   try {
     // send all User
     res.json(await User.find({}));
@@ -17,7 +17,7 @@ router.get("/User", async (req, res) => {
 
 
 // User DELETE ROUTE
-router.delete("/User/:id", async (req, res) => {
+router.delete("/user/:id", async (req, res) => {
   try {
     // send all User
     res.json(await User.findByIdAndDelete(req.params.id));
@@ -28,7 +28,7 @@ router.delete("/User/:id", async (req, res) => {
 });
 
 // User UPDATE ROUTE
-router.put("/User/:id", async (req, res) => {
+router.put("/user/:id", async (req, res) => {
   try {
     // send all User
     res.json(
@@ -41,7 +41,7 @@ router.put("/User/:id", async (req, res) => {
 });
 
 // User CREATE ROUTE
-router.post("/User", async (req, res) => {
+router.post("/user", async (req, res) => {
   try {
     // send all User
     res.json(await User.create(req.body));

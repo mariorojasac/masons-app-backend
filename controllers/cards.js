@@ -1,24 +1,54 @@
 const express = require("express");
-const User = require("../models/user");
+const Card = require("../models/card");
 const router = express.Router();
 
 // routes
 
-router.get("/", async (req, res) => {
+// card INDEX ROUTE
+router.get("/card", async (req, res) => {
   try {
-    res.json(await User.find({}));
+    // send all card
+    res.json(await Card.find({}));
   } catch (error) {
-    res.status(401).json({ message: "Please login to see Users" });
+    //send error
+    res.status(400).json(error);
   }
 });
 
-router.post("/", async (req, res) => {
+
+// card DELETE ROUTE
+router.delete("/card/:id", async (req, res) => {
   try {
-    res.json(await User.create(req, body));
+    // send all card
+    res.json(await Card.findByIdAndDelete(req.params.id));
   } catch (error) {
-    res.status(401).json({ message: "Please login to create User" });
+    //send error
+    res.status(400).json(error);
   }
 });
-router.delete('/')
+
+// card UPDATE ROUTE
+router.put("/card/:id", async (req, res) => {
+  try {
+    // send all card
+    res.json(
+      await Card.findByIdAndUpdate(req.params.id, req.body, { new: true })
+    );
+  } catch (error) {
+    //send error
+    res.status(400).json(error);
+  }
+});
+
+// card CREATE ROUTE
+router.post("/card", async (req, res) => {
+  try {
+    // send all card
+    res.json(await Card.create(req.body));
+  } catch (error) {
+    //send error
+    res.status(400).json(error);
+  }
+});
 
 module.exports = router;

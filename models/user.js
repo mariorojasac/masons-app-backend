@@ -1,17 +1,6 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
-
-const cardSchema = new Schema(
-  {
-    title: String,
-    picture: String,
-    description: String,
-    sound: String,
-    type: String,
-    authorId: String,
-  },
-  { timestamps: true }
-);         
+const Card = require('./card')       
 
 const userSchema = new Schema(
   {
@@ -22,7 +11,7 @@ const userSchema = new Schema(
     profilePic: String,
     admin: Boolean,
     userId: String,
-    cards: [cardSchema],
+    cards: [Card],
   },
   { timestamps: true }
 );
@@ -30,4 +19,3 @@ const userSchema = new Schema(
 
 
 module.exports = mongoose.model("User", userSchema);
-module.exports = mongoose.model("Card", cardSchema)

@@ -1,23 +1,24 @@
-const express = require('express')
-const Card = require('../models/card')
-const router = express.Router()
+const express = require("express");
+const User = require("../models/user");
+const router = express.Router();
 
 // routes
 
-router.get('/', async (req, res) => {
-    try {
-        res.json(await Card.find({}))
-    } catch (error) {
-        res.status(401).json({message: 'Please login to see cards'})
-    }
-})
+router.get("/", async (req, res) => {
+  try {
+    res.json(await User.find({}));
+  } catch (error) {
+    res.status(401).json({ message: "Please login to see Users" });
+  }
+});
 
-router.post('/', async (req, res) => {
-    try {
-        res.json(await Card.create(req, body))
-    } catch (error) {
-        res.status(401).json({message: 'Please login to create card'})
-    }
-})
+router.post("/", async (req, res) => {
+  try {
+    res.json(await User.create(req, body));
+  } catch (error) {
+    res.status(401).json({ message: "Please login to create User" });
+  }
+});
+router.delete('/')
 
-module.exports = router
+module.exports = router;

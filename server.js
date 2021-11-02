@@ -64,7 +64,7 @@ function isAuthenticated(req, res, next) {
 
 // routes
 app.get("/", (req, res) => {
-  res.send("Please go to http://localhost:3000/api");
+  res.send("Please go to http://localhost:3000/api, thank you!");
 });
 
 app.get("/api", (req, res) => {

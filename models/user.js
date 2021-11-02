@@ -23,7 +23,10 @@ const userSchema = new Schema(
     password: String,
     email: String,
     profilePic: String,
-    admin: Boolean,
+    admin: {
+      type: Boolean,
+      default: false,
+    },
     userId: String,
     cards: [cardSchema],
   },

@@ -1,6 +1,20 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
-const Card = require('./card')       
+
+
+
+const cardSchema = new Schema(
+  {
+    title: String,
+    picture: String,
+    description: String,
+    sound: String,
+    type: String,
+    authorId: String,
+  },
+  { timestamps: true }
+);         
+
 
 const userSchema = new Schema(
   {
@@ -11,7 +25,7 @@ const userSchema = new Schema(
     profilePic: String,
     admin: Boolean,
     userId: String,
-    cards: [Card],
+    cards: [cardSchema],
   },
   { timestamps: true }
 );

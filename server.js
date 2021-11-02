@@ -2,7 +2,7 @@ const express = require("express");
 const morgan = require("morgan");
 const cors = require("cors");
 const mongoose = require("mongoose");
-const cardsController = require("./controllers/cards");
+const userController = require("./controllers/users");
 const admin = require("firebase-admin");
 
 const app = express();
@@ -48,7 +48,7 @@ app.use(async function (req, res, next) {
   if (token) {
     const authUser = await admin
       .auth()
-      .verifyIdToken(token.replace("Bearer ", ""));
+      .verifyIdToken(token.replace("Bearer", " "));
     req.user = authUser;
   }
 
@@ -71,7 +71,7 @@ app.get("/api", (req, res) => {
   res.json({ message: "Welcome to the Mason's App API" });
 });
 
-app.use("/api/", isAuthenticated, cardsController);
+app.use("/api/", isAuthenticated, userController);
 
 app.get("/api/*", (req, res) => {
   res.status(404).json({ message: "That route was not found" });

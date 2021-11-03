@@ -2,7 +2,7 @@ const express = require("express");
 const morgan = require("morgan");
 const cors = require("cors");
 const mongoose = require("mongoose");
-const userController = require("./controllers/users");
+const cardController = require("./controllers/cards");
 const admin = require("firebase-admin");
 
 const app = express();
@@ -71,7 +71,7 @@ app.get("/api", (req, res) => {
   res.json({ message: "Welcome to the Mason's App API" });
 });
 
-app.use("/api/", isAuthenticated, userController);
+app.use("/api/", isAuthenticated, cardController);
 
 app.get("/api/*", (req, res) => {
   res.status(404).json({ message: "That route was not found" });

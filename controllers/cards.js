@@ -8,7 +8,7 @@ const router = express.Router();
 router.get("/card", async (req, res) => {
   try {
     // send all Card
-    res.json(await Card.find({ authorId: req.user.uid }));
+    res.json(await Card.find());
   } catch (error) {
     //send error
     res.status(400).json(error);

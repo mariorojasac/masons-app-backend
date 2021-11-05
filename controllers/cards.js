@@ -7,7 +7,7 @@ const router = express.Router();
 // Card INDEX ROUTE
 router.get("/card", async (req, res) => {
   try {
-    // send all Card
+    // send all Cards
     res.json(await Card.find());
   } catch (error) {
     //send error

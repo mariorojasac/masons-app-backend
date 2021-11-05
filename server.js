@@ -59,7 +59,7 @@ app.use(morgan("dev"));
 // }
 
 
-// routes
+// route
 app.get("/", (req, res) => {
   res.send("Please go to /api, thank you!");
 });

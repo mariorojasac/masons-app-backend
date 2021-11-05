@@ -1,18 +1,14 @@
-# Mason's App
+# Mason's App API
  
 
-### [Click here for the live app!](https://.herokuapp.com/)
+### [Click here for the live app!](https://mighty-crag-58767.herokuapp.com/api)
 # Technologies Used
 - Node.js
 - Express
 - MongoDB
 - Mongoose
 - JavaScript
-- HTML
-- CSS
-- Bootstrap
-- Google Fonts
-- Authentication with Bcyrpt
+- Authentication with Google Firebase
 
 # Screenshot(s)
 ![Homepage](images/IMG_0329.PNG)

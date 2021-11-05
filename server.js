@@ -67,6 +67,7 @@ app.get("/", (req, res) => {
 app.get("/api", (req, res) => {
   res.json({ message: "Welcome to the Mason's App API" });
 });
+// To DO:
 // isAuthenticated;
 app.use("/api/", cardController); 
 

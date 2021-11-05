@@ -12,14 +12,10 @@ Feel free to use this API to create your own projects!
 - Authentication with Google Firebase
 
 # Screenshot(s)
-![API](images/IMG_0329.PNG)
-
+![API](media/masonapiback.png)
 
 # Getting Started 
-You need to connect to your own database.
-Make sure Dependacies are installed.
-Sign up as a user and then log in.
-Dashboard will be the central hub that you will be able to access everything from. Enjoy the app!
+Go to /api/card to use card information
 
 # Future Enhancements
 More EndPoints
